@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+}
+
+ /* altura suficiente para scroll */
+/* main {
+  height: 800dvh;
+} */
+
+#image-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100dvh;
+  background-size: contain; /* Cambia de 'cover' a 'contain' para ver la imagen completa */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #000; /* Fondo negro para areas no cubiertas por la imagen */
+  will-change: transform; /* Mejor rendimiento que 'background-image' */
+  z-index: -1;
+}
+
+@media (orientation: landscape) {
+  #image-container {
+    background-size: auto 100%; /* Altura completa, ancho ajustado */
+  }
+}

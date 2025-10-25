@@ -1,0 +1,81 @@
+============================================
+GUÍA DE INSTALACIÓN: CHOCOLATEY + FFMPEG (Windows)
+============================================
+
+1. INSTALAR CHOCOLATEY (Gestor de Paquetes)
+-------------------------------------------
+
+Requisitos:
+- Windows 7/10/11 o Windows Server 2008+.
+- PowerShell ejecutado como Administrador.
+
+Pasos:
+1. Abre PowerShell como Administrador:
+   - Presiona Win + X
+   - Selecciona "Windows PowerShell (Admin)"
+
+2. Ejecuta este comando para instalar Chocolatey:
+
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+
+
+3. Espera a que termine la instalación (aparecerá "Chocolatey installed!").
+
+4. Verifica la instalación:
+
+choco --version
+
+(Deberías ver algo como "1.4.0").
+
+
+2. INSTALAR FFMPEG CON CHOCOLATEY
+---------------------------------
+
+1. En la misma PowerShell (como Admin), ejecuta:
+
+choco install ffmpeg
+
+
+2. Presiona "Y" + Enter si te pregunta por confirmación.
+
+3. Espera a que termine (verás "FFmpeg installed!").
+
+
+3. VERIFICAR INSTALACIÓN
+------------------------
+
+1. Cierra y abre una nueva PowerShell/CMD.
+
+2. Ejecuta:
+
+ffmpeg -version
+
+- Si muestra la versión (ej: "ffmpeg version 6.0"), ¡éxito!
+
+
+4. COMANDOS ÚTILES
+------------------
+
+- Actualizar FFmpeg:
+choco upgrade ffmpeg
+
+- Listar software instalado:
+choco list
+
+- Desinstalar FFmpeg:
+choco uninstall ffmpeg
+
+
+5. SOLUCIÓN DE PROBLEMAS
+------------------------
+
+Si "ffmpeg" no funciona:
+1. Reinicia tu terminal.
+2. Verifica el PATH del sistema:
+ - Busca "Variables de entorno" en el Panel de Control.
+ - Asegúrate de que "C:\ProgramData\chocolatey\bin" esté en "Path".
+
+
+============================================
+FIN DE LA GUÍA
+============================================
